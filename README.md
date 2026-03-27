@@ -1,7 +1,7 @@
 # AutomataNexus Homebrew Tap
 
-[![Tap](https://img.shields.io/badge/brew-automatanexus%2Ftap-blue)](https://github.com/AutomataNexus/homebrew-tap)
-[![Formulae](https://img.shields.io/badge/formulae-1-green)](https://github.com/AutomataNexus/homebrew-tap/tree/main/Formula)
+[![Tap](https://img.shields.io/badge/brew_tap-automatanexus%2Ftap-blue)](https://github.com/AutomataNexus/homebrew-tap)
+[![Formulae](https://img.shields.io/badge/formulae-5-green)](https://github.com/AutomataNexus/homebrew-tap/tree/main/Formula)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)](https://github.com/AutomataNexus/homebrew-tap)
 
 Official [Homebrew](https://brew.sh) tap for [AutomataNexus](https://github.com/AutomataNexus) tools. One tap, all our public binaries.
@@ -16,39 +16,59 @@ brew tap automatanexus/tap
 
 ## Available Formulae
 
-| Formula | Description | Version |
-|---------|-------------|---------|
-| [`nexusfoundry`](Formula/nexusfoundry.rb) | Pure Rust compiler for Hailo NPU hardware — compiles ONNX, TFLite, PyTorch, and AxonML models to HEF | 0.1.0 |
-
-More formulae will be added as AutomataNexus tools are released publicly.
+| Formula | Description | Version | Platforms |
+|---------|-------------|---------|-----------|
+| [`nexusfoundry`](Formula/nexusfoundry.rb) | Hailo NPU model compiler — ONNX/TFLite/PyTorch/AxonML to HEF | 0.1.0 | Linux, macOS |
+| [`axonml`](Formula/axonml.rb) | Pure Rust ML framework — training, inference, CUDA GPU | 0.4.2 | Linux, macOS |
+| [`ferrum`](Formula/ferrum.rb) | Component-based email framework — type-safe templates | 0.1.0 | Linux, macOS |
+| [`nexusshield`](Formula/nexusshield.rb) | Adaptive zero-trust security gateway + endpoint protection | 0.4.3 | Linux x86_64 |
+| [`nexussentinel`](Formula/nexussentinel.rb) | Facility health assessment — MLP autoencoder for edge | 0.2.0 | Linux x86_64 |
 
 ---
 
 ## Install
 
-### NexusFoundry
+```bash
+# Install any formula
+brew install automatanexus/tap/<formula>
+
+# Or tap first, then install by name
+brew tap automatanexus/tap
+brew install nexusfoundry axonml ferrum nexusshield nexussentinel
+```
+
+### NexusFoundry — Hailo model compiler
 
 ```bash
 brew install automatanexus/tap/nexusfoundry
-```
-
-Or if you've already tapped:
-
-```bash
-brew install nexusfoundry
-```
-
-#### Verify
-
-```bash
-nexusfoundry --version
-nexusfoundry info --target hailo8
-```
-
-#### Quick compile
-
-```bash
 nexusfoundry compile model.onnx --target hailo8
+```
+
+### AxonML — ML framework
+
+```bash
+brew install automatanexus/tap/axonml
+axonml-cli --version
+```
+
+### Ferrum — Email framework
+
+```bash
+brew install automatanexus/tap/ferrum
+ferrum --version
+```
+
+### NexusShield — Security gateway
+
+```bash
+brew install automatanexus/tap/nexusshield
+nexus-shield --version
+```
+
+### NexusSentinel — Facility health
+
+```bash
+brew install automatanexus/tap/nexussentinel
 ```
 
 ---
@@ -57,28 +77,20 @@ nexusfoundry compile model.onnx --target hailo8
 
 ```bash
 brew update
-brew upgrade nexusfoundry
+brew upgrade    # upgrades all formulae
 ```
 
 ## Uninstall
 
 ```bash
-brew uninstall nexusfoundry
-brew untap automatanexus/tap
+brew uninstall <formula>
+brew untap automatanexus/tap    # remove the tap entirely
 ```
-
----
-
-## Adding New Formulae
-
-This tap is the distribution point for all AutomataNexus public binaries. Future tools (AxonML CLI, NexusSentinel agent, etc.) will be added as new formulas under `Formula/`.
-
-Each formula pulls SLSA-verified release binaries from the corresponding `-releases` repo on GitHub. No source code is distributed.
 
 ---
 
 ## About AutomataNexus
 
-AutomataNexus builds AI infrastructure for edge deployment — model compilers, inference engines, and monitoring systems for Hailo NPU, NVIDIA Jetson, and custom hardware.
+AutomataNexus builds AI infrastructure for edge deployment — model compilers, inference engines, security systems, and monitoring platforms for Hailo NPU, NVIDIA Jetson, and custom hardware.
 
 [GitHub](https://github.com/AutomataNexus) | [Contact](mailto:devops@automatanexus.com)
