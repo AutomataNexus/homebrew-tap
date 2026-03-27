@@ -1,8 +1,14 @@
 # AutomataNexus Homebrew Tap
 
-[![Tap](https://img.shields.io/badge/brew_tap-automatanexus%2Ftap-blue)](https://github.com/AutomataNexus/homebrew-tap)
-[![Formulae](https://img.shields.io/badge/formulae-5-green)](https://github.com/AutomataNexus/homebrew-tap/tree/main/Formula)
-[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)](https://github.com/AutomataNexus/homebrew-tap)
+<p align="center">
+  <img src="assets/NexusTap_Logo.PNG" alt="AutomataNexus Tap" width="400">
+</p>
+
+<p align="center">
+  <a href="https://github.com/AutomataNexus/homebrew-tap"><img src="https://img.shields.io/badge/brew_tap-automatanexus%2Ftap-blue" alt="Tap"></a>
+  <a href="https://github.com/AutomataNexus/homebrew-tap/tree/main/Formula"><img src="https://img.shields.io/badge/formulae-5-green" alt="Formulae"></a>
+  <a href="https://github.com/AutomataNexus/homebrew-tap"><img src="https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey" alt="Platform"></a>
+</p>
 
 Official [Homebrew](https://brew.sh) tap for [AutomataNexus](https://github.com/AutomataNexus) tools. One tap, all our public binaries.
 
